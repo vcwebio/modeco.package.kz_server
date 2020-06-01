@@ -12,6 +12,7 @@ services:
     networks: [package_overlay]
     deploy:
       mode: replicated
+      replicas: ${KZ_SERVER_KAFKA_DEPLOY_REPLICAS}
       resources:
         limits:
           cpus: '${KZ_SERVER_KAFKA_DEPLOY_RESOURCES_LIMITS_CPUS}'
@@ -19,7 +20,10 @@ services:
         reservations:
           cpus: '${KZ_SERVER_KAFKA_DEPLOY_RESOURCES_RESERVATIONS_CPUS}'
           memory: '${KZ_SERVER_KAFKA_DEPLOY_RESOURCES_RESERVATIONS_MEMORY}'
-      labels: []
+      placement:
+        constraints: [${KZ_SERVER_KAFKA_DEPLOY_PLACEMENT_CONSTRAINTS}]
+      labels: [${KZ_SERVER_KAFKA_DEPLOY_LABELS}]
+    labels: [${KZ_SERVER_KAFKA_LABELS}]
 # END SERVICE kafka_server.base
 
 # START SERVICE zookeeper.base
@@ -32,6 +36,7 @@ services:
     networks: [package_overlay]
     deploy:
       mode: replicated
+      replicas: ${KZ_SERVER_ZOOKEEPER_DEPLOY_REPLICAS}
       resources:
         limits:
           cpus: '${KZ_SERVER_ZOOKEEPER_DEPLOY_RESOURCES_LIMITS_CPUS}'
@@ -39,7 +44,10 @@ services:
         reservations:
           cpus: '${KZ_SERVER_ZOOKEEPER_DEPLOY_RESOURCES_RESERVATIONS_CPUS}'
           memory: '${KZ_SERVER_ZOOKEEPER_DEPLOY_RESOURCES_RESERVATIONS_MEMORY}'
+      placement:
+        constraints: [${KZ_SERVER_ZOOKEEPER_DEPLOY_PLACEMENT_CONSTRAINTS}]
       labels: [${KZ_SERVER_ZOOKEEPER_DEPLOY_LABELS}]
+    labels: [${KZ_SERVER_ZOOKEEPER_LABELS}]
 # END SERVICE zookeeper.base
 
 networks: {package_overlay: { external: true }}
