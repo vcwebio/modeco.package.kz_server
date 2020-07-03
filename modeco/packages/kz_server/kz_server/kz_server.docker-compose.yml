@@ -12,7 +12,7 @@ services:
     networks: [package_overlay]
     deploy:
       mode: replicated
-      replicas: ${KZ_SERVER_KAFKA_DEPLOY_REPLICAS}
+      ${KZ_SERVER_KAFKA_DEPLOY_MODE_REPLICATED_REPLICAS}
       resources:
         limits:
           cpus: '${KZ_SERVER_KAFKA_DEPLOY_RESOURCES_LIMITS_CPUS}'
@@ -36,7 +36,7 @@ services:
     networks: [package_overlay]
     deploy:
       mode: replicated
-      replicas: ${KZ_SERVER_ZOOKEEPER_DEPLOY_REPLICAS}
+      ${KZ_SERVER_ZOOKEEPER_DEPLOY_MODE_REPLICATED_REPLICAS}
       resources:
         limits:
           cpus: '${KZ_SERVER_ZOOKEEPER_DEPLOY_RESOURCES_LIMITS_CPUS}'
