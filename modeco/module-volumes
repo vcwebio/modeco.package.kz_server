@@ -1,6 +1,6 @@
-_kafka_secrets_volume
-_kafka_data_volume
-_zookeeper_secrets_volume
-_zookeeper_data_volume
-_zookeeper_log_volume
+kz_server_kafka_secrets_volume
+kz_server_kafka_data_volume
+kz_server_zookeeper_secrets_volume
+kz_server_zookeeper_data_volume
+kz_server_zookeeper_log_volume
 

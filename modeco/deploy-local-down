@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 
 
-prefix="package_$2"
+prefix="package_kz_server_$2"
 
 
 executionplane --silent docker container prune --force
 
-if [[ "_kafka_secrets_volume" == "$prefix"* ]] ; then
+if [[ "package_kz_server_kz_server_kafka_secrets_volume" == "$prefix"* ]] ; then
 		continue="true"
 		while [[ "true" == "$continue" ]] ;
 		do
-			executionplane docker volume rm "_kafka_secrets_volume"
-			result=$(docker volume ls | grep "_kafka_secrets_volume")
+			executionplane docker volume rm "package_kz_server_kz_server_kafka_secrets_volume"
+			result=$(docker volume ls | grep "package_kz_server_kz_server_kafka_secrets_volume")
 			if [[ "$result" == "" ]] ; then
 				continue="false"
 			else
@@ -20,12 +20,12 @@ if [[ "_kafka_secrets_volume" == "$prefix"* ]] ; then
 		done;
 	fi
 	
-if [[ "_kafka_data_volume" == "$prefix"* ]] ; then
+if [[ "package_kz_server_kz_server_kafka_data_volume" == "$prefix"* ]] ; then
 		continue="true"
 		while [[ "true" == "$continue" ]] ;
 		do
-			executionplane docker volume rm "_kafka_data_volume"
-			result=$(docker volume ls | grep "_kafka_data_volume")
+			executionplane docker volume rm "package_kz_server_kz_server_kafka_data_volume"
+			result=$(docker volume ls | grep "package_kz_server_kz_server_kafka_data_volume")
 			if [[ "$result" == "" ]] ; then
 				continue="false"
 			else
@@ -34,12 +34,12 @@ if [[ "_kafka_data_volume" == "$prefix"* ]] ; then
 		done;
 	fi
 	
-if [[ "_zookeeper_secrets_volume" == "$prefix"* ]] ; then
+if [[ "package_kz_server_kz_server_zookeeper_secrets_volume" == "$prefix"* ]] ; then
 		continue="true"
 		while [[ "true" == "$continue" ]] ;
 		do
-			executionplane docker volume rm "_zookeeper_secrets_volume"
-			result=$(docker volume ls | grep "_zookeeper_secrets_volume")
+			executionplane docker volume rm "package_kz_server_kz_server_zookeeper_secrets_volume"
+			result=$(docker volume ls | grep "package_kz_server_kz_server_zookeeper_secrets_volume")
 			if [[ "$result" == "" ]] ; then
 				continue="false"
 			else
@@ -48,12 +48,12 @@ if [[ "_zookeeper_secrets_volume" == "$prefix"* ]] ; then
 		done;
 	fi
 	
-if [[ "_zookeeper_data_volume" == "$prefix"* ]] ; then
+if [[ "package_kz_server_kz_server_zookeeper_data_volume" == "$prefix"* ]] ; then
 		continue="true"
 		while [[ "true" == "$continue" ]] ;
 		do
-			executionplane docker volume rm "_zookeeper_data_volume"
-			result=$(docker volume ls | grep "_zookeeper_data_volume")
+			executionplane docker volume rm "package_kz_server_kz_server_zookeeper_data_volume"
+			result=$(docker volume ls | grep "package_kz_server_kz_server_zookeeper_data_volume")
 			if [[ "$result" == "" ]] ; then
 				continue="false"
 			else
@@ -62,12 +62,12 @@ if [[ "_zookeeper_data_volume" == "$prefix"* ]] ; then
 		done;
 	fi
 	
-if [[ "_zookeeper_log_volume" == "$prefix"* ]] ; then
+if [[ "package_kz_server_kz_server_zookeeper_log_volume" == "$prefix"* ]] ; then
 		continue="true"
 		while [[ "true" == "$continue" ]] ;
 		do
-			executionplane docker volume rm "_zookeeper_log_volume"
-			result=$(docker volume ls | grep "_zookeeper_log_volume")
+			executionplane docker volume rm "package_kz_server_kz_server_zookeeper_log_volume"
+			result=$(docker volume ls | grep "package_kz_server_kz_server_zookeeper_log_volume")
 			if [[ "$result" == "" ]] ; then
 				continue="false"
 			else

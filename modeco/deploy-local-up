@@ -1,25 +1,25 @@
 #!/usr/bin/env bash
 
 
-prefix="package_$2"
+prefix="package_kz_server_$2"
 
-if [[ "_kafka_secrets_volume" == "$prefix"* ]] ; then
-	executionplane --silent docker volume create _kafka_secrets_volume
+if [[ "package_kz_server_kz_server_kafka_secrets_volume" == "$prefix"* ]] ; then
+	executionplane --silent docker volume create package_kz_server_kz_server_kafka_secrets_volume
 	fi
 	
-if [[ "_kafka_data_volume" == "$prefix"* ]] ; then
-	executionplane --silent docker volume create _kafka_data_volume
+if [[ "package_kz_server_kz_server_kafka_data_volume" == "$prefix"* ]] ; then
+	executionplane --silent docker volume create package_kz_server_kz_server_kafka_data_volume
 	fi
 	
-if [[ "_zookeeper_secrets_volume" == "$prefix"* ]] ; then
-	executionplane --silent docker volume create _zookeeper_secrets_volume
+if [[ "package_kz_server_kz_server_zookeeper_secrets_volume" == "$prefix"* ]] ; then
+	executionplane --silent docker volume create package_kz_server_kz_server_zookeeper_secrets_volume
 	fi
 	
-if [[ "_zookeeper_data_volume" == "$prefix"* ]] ; then
-	executionplane --silent docker volume create _zookeeper_data_volume
+if [[ "package_kz_server_kz_server_zookeeper_data_volume" == "$prefix"* ]] ; then
+	executionplane --silent docker volume create package_kz_server_kz_server_zookeeper_data_volume
 	fi
 	
-if [[ "_zookeeper_log_volume" == "$prefix"* ]] ; then
-	executionplane --silent docker volume create _zookeeper_log_volume
+if [[ "package_kz_server_kz_server_zookeeper_log_volume" == "$prefix"* ]] ; then
+	executionplane --silent docker volume create package_kz_server_kz_server_zookeeper_log_volume
 	fi
 	
